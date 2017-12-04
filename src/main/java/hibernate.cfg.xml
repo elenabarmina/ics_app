@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:postgresql://localhost:5433/ICS_DB</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TCardTypePOJO"/>
+        <mapping resource="hibernate.mapping.xml"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TCityPOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TCityTypePOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TClientPOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TCoefsPOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TCoefsTypePOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TDocTypePOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TDocumentPOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TFortuneContractPOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TFortuneTypePOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TInsuranceContractPOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TLinkFortuneContractCoefsPOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TPassportCardTypePOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TRealtyAddressPOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TRegionPOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TRusAddressPOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TStatePOJO"/>
+        <mapping class="com.pecen.ics_app.application.server.datasource.entities.TUserPOJO"/>
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

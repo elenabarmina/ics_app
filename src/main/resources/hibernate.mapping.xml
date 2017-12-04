@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TCardTypePOJO" table="t_card_type"
+           schema="public" catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="name" column="name"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TCityPOJO" table="t_city" schema="public"
+           catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="idType" column="id_type"/>
+        <property name="idRegion" column="id_region"/>
+        <property name="idParent" column="id_parent"/>
+        <property name="name" column="name"/>
+        <property name="isRegionCenter" column="is_region_center"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TCityTypePOJO" table="t_city_type"
+           schema="public" catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="name" column="name"/>
+        <property name="shortcut" column="shortcut"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TClientPOJO" table="t_client" schema="public"
+           catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="idCardType" column="id_card_type"/>
+        <property name="firstName" column="first_name"/>
+        <property name="lastName" column="last_name"/>
+        <property name="middleName" column="middle_name"/>
+        <property name="birthDate" column="birth_date"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TCoefsPOJO" table="t_coefs" schema="public"
+           catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="idCoefType" column="id_coef_type"/>
+        <property name="value" column="value"/>
+        <property name="version" column="version"/>
+        <property name="lessThan" column="less_than"/>
+        <property name="greaterThan" column="greater_than"/>
+        <property name="equalTo" column="equal_to"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TCoefsTypePOJO" table="t_coefs_type"
+           schema="public" catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="name" column="name"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TDocTypePOJO" table="t_doc_type"
+           schema="public" catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="name" column="name"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TDocumentPOJO" table="t_document"
+           schema="public" catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="idType" column="id_type"/>
+        <property name="serialNumber" column="serial_number"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="isDeleted" column="is_deleted"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TFortuneContractPOJO"
+           table="t_fortune_contract" schema="public" catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="idFortuneType" column="id_fortune_type"/>
+        <property name="idAddress" column="id_address"/>
+        <property name="idInsuranceContract" column="id_insurance_contract"/>
+        <property name="builtYear" column="built_year"/>
+        <property name="floorArea" column="floor_area"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TFortuneTypePOJO" table="t_fortune_type"
+           schema="public" catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="name" column="name"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TInsuranceContractPOJO"
+           table="t_insurance_contract" schema="public" catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="idClient" column="id_client"/>
+        <property name="idCreator" column="id_creator"/>
+        <property name="idDocument" column="id_document"/>
+        <property name="premium" column="premium"/>
+        <property name="validityDateFrom" column="validity_date_from"/>
+        <property name="validityDateTo" column="validity_date_to"/>
+        <property name="insuredSum" column="insured_sum"/>
+        <property name="contractVersion" column="contract_version"/>
+        <property name="calculationDate" column="calculation_date"/>
+        <property name="comment" column="comment"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TLinkFortuneContractCoefsPOJO"
+           table="t_link_fortune_contract_coefs" schema="public" catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="idContract" column="id_contract"/>
+        <property name="idCoef" column="id_coef"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TPassportCardTypePOJO"
+           table="t_passport_card_type" schema="public" catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="idClient" column="id_client"/>
+        <property name="series" column="series"/>
+        <property name="number" column="number"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TRealtyAddressPOJO" table="t_realty_address"
+           schema="public" catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="idState" column="id_state"/>
+        <property name="idAddress" column="id_address"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TRegionPOJO" table="t_region" schema="public"
+           catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="name" column="name"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TRusAddressPOJO" table="t_rus_address"
+           schema="public" catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="idCity" column="id_city"/>
+        <property name="street" column="street"/>
+        <property name="house" column="house"/>
+        <property name="building" column="building"/>
+        <property name="corpus" column="corpus"/>
+        <property name="flat" column="flat"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TStatePOJO" table="t_state" schema="public"
+           catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="name" column="name"/>
+    </class>
+    <class name="com.pecen.ics_app.application.server.datasource.entities.TUserPOJO" table="t_user" schema="public"
+           catalog="ICS_DB">
+        <id name="id" column="id"/>
+        <property name="firstName" column="first_name"/>
+        <property name="lastName" column="last_name"/>
+        <property name="middleName" column="middle_name"/>
+    </class>
+</hibernate-mapping>

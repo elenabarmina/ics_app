@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="ICS_DB@localhost" uuid="2436e792-0a27-49d1-82d8-df5974f63c5a">
+      <driver-ref>postgresql</driver-ref>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5433/ICS_DB</jdbc-url>
+    </data-source>
+  </component>
+</project>
