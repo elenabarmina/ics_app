@@ -4,7 +4,10 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+        <property name="dialect">org.hibernate.dialect.PostgreSQL82Dialect</property>
         <property name="connection.url">jdbc:postgresql://localhost:5433/ICS_DB</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">postgres</property>
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <mapping class="com.pecen.ics_app.application.server.datasource.entities.TCardTypePOJO"/>
         <mapping resource="hibernate.mapping.xml"/>
@@ -25,8 +28,6 @@
         <mapping class="com.pecen.ics_app.application.server.datasource.entities.TRusAddressPOJO"/>
         <mapping class="com.pecen.ics_app.application.server.datasource.entities.TStatePOJO"/>
         <mapping class="com.pecen.ics_app.application.server.datasource.entities.TUserPOJO"/>
-        <!-- <property name="connection.username"/> -->
-        <!-- <property name="connection.password"/> -->
 
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->

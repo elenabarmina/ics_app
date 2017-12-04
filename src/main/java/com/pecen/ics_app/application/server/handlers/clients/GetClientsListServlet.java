@@ -34,7 +34,7 @@ public class GetClientsListServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
         IClientDAO clientsDao = new ClientDAOImpl();
-        List clients = clientsDao.findAll();
+        List<TClientPOJO> clients = (List<TClientPOJO>) clientsDao.findAll();
         out.print(new Gson().toJson(clients));
     }
 }
