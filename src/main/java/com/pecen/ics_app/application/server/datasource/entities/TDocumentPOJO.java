@@ -13,7 +13,15 @@ public class TDocumentPOJO {
     private long idType;
     private String serialNumber;
     private Date creationDate;
-    private boolean isDeleted;
+    private int isDeleted;
+
+    public int getIsDeleted() {
+        return isDeleted;
+    }
+
+    public void setIsDeleted(int isDeleted) {
+        this.isDeleted = isDeleted;
+    }
 
     @Id
     @Column(name = "id")
@@ -57,11 +65,11 @@ public class TDocumentPOJO {
 
     @Basic
     @Column(name = "is_deleted")
-    public boolean isDeleted() {
+    public int isDeleted() {
         return isDeleted;
     }
 
-    public void setDeleted(boolean deleted) {
+    public void setDeleted(int deleted) {
         isDeleted = deleted;
     }
 
@@ -87,7 +95,7 @@ public class TDocumentPOJO {
         result = 31 * result + (int) (idType ^ (idType >>> 32));
         result = 31 * result + (serialNumber != null ? serialNumber.hashCode() : 0);
         result = 31 * result + (creationDate != null ? creationDate.hashCode() : 0);
-        result = 31 * result + (isDeleted ? 1 : 0);
+        result = 31 * result + (int) (isDeleted ^ (isDeleted >>> 32));
         return result;
     }
 }

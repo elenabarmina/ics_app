@@ -13,7 +13,15 @@ public class TCityPOJO {
     private long idRegion;
     private long idParent;
     private String name;
-    private Boolean isRegionCenter;
+    private int isRegionCenter;
+
+    public int getIsRegionCenter() {
+        return isRegionCenter;
+    }
+
+    public void setIsRegionCenter(int isRegionCenter) {
+        this.isRegionCenter = isRegionCenter;
+    }
 
     @Id
     @Column(name = "id")
@@ -67,11 +75,11 @@ public class TCityPOJO {
 
     @Basic
     @Column(name = "is_region_center")
-    public Boolean getRegionCenter() {
+    public int getRegionCenter() {
         return isRegionCenter;
     }
 
-    public void setRegionCenter(Boolean regionCenter) {
+    public void setRegionCenter(int regionCenter) {
         isRegionCenter = regionCenter;
     }
 
@@ -87,8 +95,7 @@ public class TCityPOJO {
         if (idRegion != tCityPOJO.idRegion) return false;
         if (idParent != tCityPOJO.idParent) return false;
         if (name != null ? !name.equals(tCityPOJO.name) : tCityPOJO.name != null) return false;
-        if (isRegionCenter != null ? !isRegionCenter.equals(tCityPOJO.isRegionCenter) : tCityPOJO.isRegionCenter != null)
-            return false;
+        if (isRegionCenter != tCityPOJO.isRegionCenter) return false;
 
         return true;
     }
@@ -100,7 +107,7 @@ public class TCityPOJO {
         result = 31 * result + (int) (idRegion ^ (idRegion >>> 32));
         result = 31 * result + (int) (idParent ^ (idParent >>> 32));
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (isRegionCenter != null ? isRegionCenter.hashCode() : 0);
+        result = 31 * result + (int) (isRegionCenter ^ (isRegionCenter >>> 32));
         return result;
     }
 }
